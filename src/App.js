@@ -9,7 +9,11 @@ function App() {
       <Container>
         <span className="text1">
           THE WEDDING{" "}
-          <img className="weddingRing" src="/images/wedding-rings.svg"></img>
+          <img
+            alt=""
+            className="weddingRing"
+            src="/images/wedding-rings.svg"
+          ></img>
         </span>
         <p className="text2">Anup & Hema</p>
         <BG src="/images/main.jpeg"></BG>
@@ -23,22 +27,22 @@ function App() {
         </Clicks>
         <Content>
           <Wrap>
-            <img src="/images/main.jpeg" />
+            <img alt="" src="/images/main.jpeg" />
           </Wrap>
           <Wrap>
-            <img src="/images/pic_Anup.jpg" />
+            <img alt="" src="/images/pic_Anup.jpg" />
           </Wrap>
           <Wrap>
-            <img src="/images/2.jpg" />
+            <img alt="" src="/images/2.jpg" />
           </Wrap>
           <Wrap>
-            <img src="/images/4.jpg" />
+            <img alt="" src="/images/4.jpg" />
           </Wrap>
           <Wrap>
-            <img src="/images/5.jpg" />
+            <img alt="" src="/images/5.jpg" />
           </Wrap>
           <Wrap>
-            <img src="/images/6.jpg" />
+            <img alt="" src="/images/6.jpg" />
           </Wrap>
         </Content>
       </ClicksContainer>
