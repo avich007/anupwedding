@@ -35,9 +35,9 @@ function App() {
       <ClicksContainer>
         <Clicks>
           <p className="text3">
-            C<u>lick</u>s
+            C<u>lick</u>s 📸
           </p>
-          <FontAwesomeIcon icon={faCameraRetro} className="camera" />
+          {/* <FontAwesomeIcon icon={faCameraRetro} className="camera" /> */}
         </Clicks>
         <Content>
           <Wrap>
@@ -63,9 +63,9 @@ function App() {
       <WishesContainer>
         <Wishes>
           <p className="text3">
-            S<u>alutation</u>s
+            S<u>alutation</u>s 🎊
           </p>
-          <FontAwesomeIcon icon={faComments} className="camera" />
+          {/* <FontAwesomeIcon icon={faComments} className="camera" /> */}
         </Wishes>
         <Carousel {...settings}>
           <Wish>
@@ -157,6 +157,7 @@ const Wrap = styled.div`
 
 const Wish = styled.div`
   height: 200px;
+  background-color: silver;
   text-align: center;
   border-radius: 10px;
   overflow: hidden;

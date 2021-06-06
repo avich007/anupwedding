@@ -39,9 +39,9 @@ function WishBox() {
     <WishForm>
       <Header>
         <p className="text3">
-          W<u>ishU</u>s
+          W<u>ishU</u>s 💐
         </p>
-        <FontAwesomeIcon icon={faAddressCard} className="camera" />
+        {/* <FontAwesomeIcon icon={faAddressCard} className="camera" /> */}
       </Header>
       <FormBody>
         <div>
@@ -78,10 +78,10 @@ export default WishBox;
 const WishForm = styled.div``;
 
 const FormBody = styled.div`
-  border: 3px solid peru;
   border-radius: 30px;
   margin: 20px;
   padding: 50px;
+  background-color: silver;
 `;
 
 const Header = styled.div`
