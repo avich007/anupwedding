@@ -1,4 +1,6 @@
 import "./App.css";
+import { db } from "./firebase.config";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -14,6 +16,24 @@ function App() {
     slidesToScroll: 1,
     autoplay: true,
   };
+
+  const [wish, setWish] = useState([]);
+
+  // const fetchData = async () => {
+  //   const response = db.collection("wishes");
+  //   const snapshot = await response.get();
+
+  //   snapshot.forEach((item) => {
+  //     setWish([...wish, item.data()]);
+  //     console.log(wish);
+  //   });
+  // };
+
+  useEffect(() => {
+    db.collection("wishes").onSnapshot((snapshot) => {
+      setWish(snapshot.docs.map((doc) => doc.data()));
+    });
+  }, []);
 
   return (
     <div>
@@ -66,20 +86,20 @@ function App() {
           {/* <FontAwesomeIcon icon={faComments} className="camera" /> */}
         </Wishes>
         <Carousel {...settings}>
-          <Wish>
-            <div>
-              <h1>Happy Married Life</h1>
-              <h2>Avinash</h2>
-              <h3>Chennai</h3>
-            </div>
-          </Wish>
-          <Wish>
-            <div>
-              <h1>All the Best</h1>
-              <h2>Sriram</h2>
-              <h3>Nellore</h3>
-            </div>
-          </Wish>
+          {wish &&
+            wish.length > 0 &&
+            wish.map((item) => (
+              <Wish>
+                <Message>
+                  <MessageBody>{item.message}</MessageBody>
+                  <div>
+                    <Name>
+                      {item.name},<City>{item.location}</City>
+                    </Name>
+                  </div>
+                </Message>
+              </Wish>
+            ))}
         </Carousel>
       </WishesContainer>
       <WishBox />
@@ -154,7 +174,12 @@ const Wrap = styled.div`
 `;
 
 const Wish = styled.div`
-  height: 200px;
+  @media screen and (min-width: 601px) {
+    height: 150px;
+  }
+  @media screen and (max-width: 600px) {
+    height: 100px;
+  }
   background-color: silver;
   text-align: center;
   border-radius: 10px;
@@ -178,8 +203,6 @@ const Wish = styled.div`
 `;
 
 const Carousel = styled(Slider)`
-  margin-top: 20px;
-
   ul li button {
     &:before {
       font-size: 10px;
@@ -197,5 +220,52 @@ const Carousel = styled(Slider)`
 
   button {
     z-index: 1;
+  }
+`;
+
+const Message = styled.div`
+  @media screen and (min-width: 601px) {
+    margin: 30px;
+  }
+  @media screen and (max-width: 600px) {
+    margin: 5px;
+  }
+`;
+
+const Name = styled.span`
+  margin-top: 10px;
+  color: firebrick;
+  @media screen and (min-width: 601px) {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  font-weight: bold;
+`;
+
+const City = styled.span`
+  @media screen and (min-width: 601px) {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  color: firebrick;
+  font-weight: bold;
+`;
+
+const MessageBody = styled.span`
+  color: slateblue;
+  font-weight: bold;
+  @media screen and (min-width: 601px) {
+    font-size: 30px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 16px;
   }
 `;

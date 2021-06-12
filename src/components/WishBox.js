@@ -1,38 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1),
-      width: 200,
-    },
-  },
-  name: {
-    margin: 30,
-    width: 400,
-  },
-  location: {
-    margin: 30,
-    width: 300,
-  },
-  message: {
-    margin: 30,
-    width: 760,
-  },
-  button: {
-    margin: 30,
-    width: 200,
-    fontSize: 15,
-    fontWeight: 900,
-  },
-}));
+import { db } from "../firebase.config";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function WishBox() {
-  const classes = useStyles();
+  const initialFormData = Object.freeze({
+    name: "",
+    location: "",
+    message: "",
+  });
+
+  const [formData, updateFormData] = useState(initialFormData);
+
+  const handleChange = (e) => {
+    updateFormData({
+      ...formData,
+
+      // Trimming any whitespace
+      [e.target.name]: e.target.value.trim(),
+    });
+  };
+
+  const saveMessage = () => {
+    db.collection("wishes").doc().set(formData);
+    toast.success("Success!!!");
+  };
+
   return (
     <WishForm>
       <Header>
@@ -43,30 +37,33 @@ function WishBox() {
       </Header>
       <FormBody>
         <div>
-          <TextField className={classes.name} label="Name" variant="outlined" />
-          <TextField
-            className={classes.location}
-            label="Location"
-            variant="outlined"
+          <input
+            name="name"
+            type="text"
+            onChange={handleChange}
+            placeholder="Name"
+          />
+          <input
+            name="location"
+            type="text"
+            onChange={handleChange}
+            placeholder="Location"
           />
         </div>
-        <TextField
-          className={classes.message}
-          multiline
-          label="Message"
-          variant="outlined"
-        />
         <div>
-          <Button
-            className={classes.button}
-            style={{ backgroundColor: "peru" }}
-            variant="contained"
-            color="primary"
-          >
-            Send
-          </Button>
+          <textarea
+            name="message"
+            onChange={handleChange}
+            maxLength="130"
+            type="text"
+            placeholder="Message"
+          />
+        </div>
+        <div>
+          <button onClick={saveMessage}>Send</button>
         </div>
       </FormBody>
+      <ToastContainer />
     </WishForm>
   );
 }
@@ -80,10 +77,61 @@ const FormBody = styled.div`
   margin: 20px;
   padding: 50px;
   background-color: silver;
+
+  @media screen and (min-width: 601px) {
+    div {
+      width: 60%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    div {
+      width: 100%;
+    }
+  }
+
+  input,
+  textarea,
+  button {
+    @media screen and (min-width: 601px) {
+      width: 300px;
+      margin: 30px;
+    }
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      margin-top: 20px;
+    }
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+  }
+
+  span {
+    @media screen and (min-width: 601px) {
+      margin-left: 30px;
+    }
+    @media screen and (max-width: 600px) {
+    }
+  }
+
+  textarea {
+    padding: 20px;
+    height: 40px;
+    width: 100%;
+  }
+
+  button {
+    @media screen and (min-width: 601px) {
+      width: 200px;
+    }
+
+    background-color: peru;
+  }
 `;
 
 const Header = styled.div`
-  margin-top: 0px;
   display: flex;
   align-items: center;
 `;
