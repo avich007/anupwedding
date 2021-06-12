@@ -203,6 +203,7 @@ const Wish = styled.div`
 `;
 
 const Carousel = styled(Slider)`
+  overflow-x: hidden;
   ul li button {
     &:before {
       font-size: 10px;
