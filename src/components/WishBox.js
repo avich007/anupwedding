@@ -119,7 +119,7 @@ const FormBody = styled.div`
   textarea {
     padding: 20px;
     height: 40px;
-    width: 100%;
+    width: 88%;
   }
 
   button {
