@@ -23,13 +23,8 @@ function WishBox() {
   };
 
   const saveMessage = () => {
-    if(formData!.name!=""){
      db.collection("wishes").doc().set(formData);
      toast.success("Success!!!");
-    }
-    else{
-     toast.errore("empty fields!!!");
-    }
   };
 
   return (
@@ -80,7 +75,7 @@ export default WishBox;
 
 const WishForm = styled.div``;
 
-const FormBody = styled.div`
+const FormBody = styled.form`
   border-radius: 30px;
   margin: 20px;
   padding: 50px;
