@@ -58,7 +58,7 @@ function App() {
         </Clicks>
         <iframe
           style={{ marginLeft: 30 }}
-          width="1120"
+          width="600"
           height="630"
           src="https://www.youtube.com/embed/6MHz7HouNm8"
           title="YouTube video player"
