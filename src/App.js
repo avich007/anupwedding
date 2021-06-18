@@ -50,18 +50,22 @@ function App() {
         <BG src="/images/main.jpeg"></BG>
       </Container>
       <ClicksContainer>
-       <Clicks>
+        <Clicks>
           <p className="text3">
             L<u>iv</u>e
           </p>
           {/* <FontAwesomeIcon icon={faCameraRetro} className="camera" /> */}
         </Clicks>
-        <iframe src='https://youtu.be/6MHz7HouNm8'
-        frameborder='0'
-        allow='autoplay; encrypted-media'
-        allowfullscreen
-        title='video'
-/>
+        <iframe
+          style={{ marginLeft: 30 }}
+          width="1120"
+          height="630"
+          src="https://www.youtube.com/embed/6MHz7HouNm8"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </ClicksContainer>
       <ClicksContainer>
         <Clicks>
@@ -78,16 +82,28 @@ function App() {
             <img alt="" src="/images/pic_Anup.jpg" />
           </Wrap>
           <Wrap>
-            <img alt="" src="/images/8DE1DC7B-CF48-462F-BB02-72844B5E9C50.jpeg" />
+            <img
+              alt=""
+              src="/images/8DE1DC7B-CF48-462F-BB02-72844B5E9C50.jpeg"
+            />
           </Wrap>
           <Wrap>
-            <img alt="" src="/images/92D01B4B-C9CF-4E64-886F-2AC5F253736A.jpeg" />
+            <img
+              alt=""
+              src="/images/92D01B4B-C9CF-4E64-886F-2AC5F253736A.jpeg"
+            />
           </Wrap>
           <Wrap>
-            <img alt="" src="/images/AC868A10-55A2-47F4-8760-0FD6D46E536F.jpeg" />
+            <img
+              alt=""
+              src="/images/AC868A10-55A2-47F4-8760-0FD6D46E536F.jpeg"
+            />
           </Wrap>
           <Wrap>
-            <img alt="" src="/images/C966B502-F8AC-4AA7-B27D-51F3C2AB8051.jpeg" />
+            <img
+              alt=""
+              src="/images/C966B502-F8AC-4AA7-B27D-51F3C2AB8051.jpeg"
+            />
           </Wrap>
         </Content>
       </ClicksContainer>
