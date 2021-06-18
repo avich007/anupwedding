@@ -65,16 +65,16 @@ function App() {
             <img alt="" src="/images/pic_Anup.jpg" />
           </Wrap>
           <Wrap>
-            <img alt="" src="/images/2.jpg" />
+            <img alt="" src="/images/8DE1DC7B-CF48-462F-BB02-72844B5E9C50.jpeg" />
           </Wrap>
           <Wrap>
-            <img alt="" src="/images/4.jpg" />
+            <img alt="" src="/images/92D01B4B-C9CF-4E64-886F-2AC5F253736A.jpeg" />
           </Wrap>
           <Wrap>
-            <img alt="" src="/images/5.jpg" />
+            <img alt="" src="/images/AC868A10-55A2-47F4-8760-0FD6D46E536F.jpeg" />
           </Wrap>
           <Wrap>
-            <img alt="" src="/images/6.jpg" />
+            <img alt="" src="/images/C966B502-F8AC-4AA7-B27D-51F3C2AB8051.jpeg" />
           </Wrap>
         </Content>
       </ClicksContainer>
