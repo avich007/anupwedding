@@ -35,7 +35,7 @@ function WishBox() {
         </p>
         {/* <FontAwesomeIcon icon={faAddressCard} className="camera" /> */}
       </Header>
-      <FormBody onSubmit={saveMessage} >
+      <FormBody onClick={saveMessage} >
         <div>
           <input
             name="name"
