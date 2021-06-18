@@ -57,9 +57,9 @@ function App() {
           {/* <FontAwesomeIcon icon={faCameraRetro} className="camera" /> */}
         </Clicks>
         <iframe
-          style={{ marginLeft: 30 }}
-          width="400"
-          height="300"
+          style={{ marginLeft: 30, marginRight:30 }}
+          width="370"
+          height="270"
           src="https://www.youtube.com/embed/6MHz7HouNm8"
           title="YouTube video player"
           frameborder="0"
