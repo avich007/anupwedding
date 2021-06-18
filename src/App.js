@@ -117,6 +117,7 @@ function App() {
           {wish &&
             wish.length > 0 &&
             wish.map((item) => (
+              {if(item.name){
               <Wish>
                 <Message>
                   <MessageBody>{item.message}</MessageBody>
@@ -127,6 +128,7 @@ function App() {
                   </div>
                 </Message>
               </Wish>
+             }}
             ))}
         </Carousel>
       </WishesContainer>
