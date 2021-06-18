@@ -35,7 +35,7 @@ function WishBox() {
         </p>
         {/* <FontAwesomeIcon icon={faAddressCard} className="camera" /> */}
       </Header>
-      <FormBody onClick={saveMessage} >
+      <FormBody>
         <div>
           <input
             name="name"
@@ -63,7 +63,7 @@ function WishBox() {
           />
         </div>
         <div>
-          <button>Send</button>
+          <button onClick={saveMessage}>Send</button>
         </div>
       </FormBody>
       <ToastContainer />
