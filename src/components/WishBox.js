@@ -42,12 +42,14 @@ function WishBox() {
             type="text"
             onChange={handleChange}
             placeholder="Name"
+            required
           />
           <input
             name="location"
             type="text"
             onChange={handleChange}
             placeholder="Location"
+            required
           />
         </div>
         <div>
@@ -57,6 +59,7 @@ function WishBox() {
             maxLength="130"
             type="text"
             placeholder="Message"
+            required
           />
         </div>
         <div>
