@@ -49,7 +49,20 @@ function App() {
         <p className="text2">Anup & Hema</p>
         <BG src="/images/main.jpeg"></BG>
       </Container>
-
+      <ClicksContainer>
+       <Clicks>
+          <p className="text3">
+            L<u>iv</u>e
+          </p>
+          {/* <FontAwesomeIcon icon={faCameraRetro} className="camera" /> */}
+        </Clicks>
+        <iframe src='https://youtu.be/6MHz7HouNm8'
+        frameborder='0'
+        allow='autoplay; encrypted-media'
+        allowfullscreen
+        title='video'
+/>
+      </ClicksContainer>
       <ClicksContainer>
         <Clicks>
           <p className="text3">
