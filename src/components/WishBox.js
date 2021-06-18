@@ -23,8 +23,13 @@ function WishBox() {
   };
 
   const saveMessage = () => {
-    db.collection("wishes").doc().set(formData);
-    toast.success("Success!!!");
+    if(formData.name!=""){
+     db.collection("wishes").doc().set(formData);
+     toast.success("Success!!!");
+    }
+    else{
+     toast.error("empty fields!!!");
+    }
   };
 
   return (
